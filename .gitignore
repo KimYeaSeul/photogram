@@ -19,6 +19,11 @@ target/
 *.iml
 *.ipr
 
+application.yml
+.DS_Store
+src/.DS_Store
+src/main/.DS_Store
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/

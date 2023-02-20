@@ -2,17 +2,15 @@ package com.cos.photogramstart.domain.user;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.PrePersist;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 // JPA - Java Persistence API (자바로 데이터를 영구적으로 저장할 수 있는 API 제공)
+@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,6 +19,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@Column(unique = true)
 	private String username;
 	private String password;
 	private String email;

@@ -27,7 +27,7 @@ public class UserController {
         PrincipalDetails mPrincipalDetails = (PrincipalDetails) auth.getPrincipal();
         System.out.println("직접 찾은 세션 정보 " + mPrincipalDetails.getUser());
 
-        model.addAttribute("principal", principalDetails.getUser());
+//        model.addAttribute("principal", principalDetails.getUser());
         return "user/update";
     }
 }

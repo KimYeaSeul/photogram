@@ -1,8 +1,11 @@
 package com.cos.photogramstart.handler;
 
+import com.cos.photogramstart.handler.ex.CustomValidationApiException;
 import com.cos.photogramstart.handler.ex.CustomValidationException;
 import com.cos.photogramstart.util.Script;
 import com.cos.photogramstart.web.dto.CMRespDto;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +16,7 @@ import java.util.Map;
 @RestController
 @ControllerAdvice
 public class ControllerExceptionHandler {
-
+    //js return
     @ExceptionHandler(CustomValidationException.class)
     public String validationException(CustomValidationException e){
 
@@ -22,5 +25,11 @@ public class ControllerExceptionHandler {
         // 3. Android 통신 - CMRespDto 사용 -> 개발자가 응답 받음
 //        return new CMRespDto(-1, e.getMessage(), e.getErrorMap());
         return Script.back(e.getErrorMap().toString());
+    }
+
+//    data return
+    @ExceptionHandler(CustomValidationApiException.class)
+    public ResponseEntity<?> validationApiException(CustomValidationApiException e){
+        return new ResponseEntity<>( new CMRespDto<>(-1, e.getMessage(), e.getErrorMap()), HttpStatus.BAD_REQUEST);
     }
 }

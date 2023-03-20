@@ -23,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		// 삭제 시 기존 시큐리티가 가지고 있는 기능이 다 비활성화 됨.
 		// super.configure(http); // <- 이 코드가 로그인 페이지 가로채가고 있음. 
 		http.authorizeRequests()
-			.antMatchers("/","/user/**","/image/**","/subscribe/**","/coment/**").authenticated()
+			.antMatchers("/","/user/**","/image/**","/subscribe/**","/comment/**","/api/**").authenticated()
 			.anyRequest().permitAll()
 			.and()
 			.formLogin().loginPage("/auth/signin") // GET -> 인증이 안된 사용자가 보는 페이지

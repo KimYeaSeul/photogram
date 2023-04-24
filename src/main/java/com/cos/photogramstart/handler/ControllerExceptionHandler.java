@@ -25,7 +25,8 @@ public class ControllerExceptionHandler {
         // 2. Ajax 통신 - CMRespDto 사용 -> 개발자가 응답 받음
         // 3. Android 통신 - CMRespDto 사용 -> 개발자가 응답 받음
 //        return new CMRespDto(-1, e.getMessage(), e.getErrorMap());
-        return Script.back(e.getErrorMap().toString());
+        if(e.getErrorMap() == null) return Script.back(e.getMessage());
+        else return Script.back(e.getErrorMap().toString());
     }
 
 //    data return

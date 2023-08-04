@@ -37,7 +37,7 @@ public class UserService {
         userEntity.setWebsite(user.getWebsite());
         userEntity.setPhone(user.getPhone());
         userEntity.setGender(user.getGender());
-        // 더티체킹 - 영속성 컨텍스트에 있는 데이터와 DB 에 있는 데이터를 비교하여 자동으로 DB에 넣어줌.
+        // 더티체킹이 일어나서 업데이트가 완료됨 - 영속성 컨텍스트에 있는 데이터와 DB 에 있는 데이터를 비교하여 자동으로 DB에 넣어줌.
 
         return userEntity;
     }

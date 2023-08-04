@@ -14,14 +14,12 @@ import com.cos.photogramstart.service.AuthService;
 import com.cos.photogramstart.web.dto.auth.SignupDto;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
 @RequiredArgsConstructor
-@Controller
+@Controller // 1. IoC 등록 2. 파일을 리턴하는 컨트롤러
 public class AuthController {
 
 	

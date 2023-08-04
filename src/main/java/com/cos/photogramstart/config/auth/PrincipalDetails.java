@@ -11,7 +11,11 @@ import java.util.Collection;
 @Data
 public class PrincipalDetails implements UserDetails {
 
-    private User user;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private User user;
 
     public PrincipalDetails(User user){
         this.user=user;

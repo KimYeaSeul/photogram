@@ -22,11 +22,14 @@ public class UserController {
         // 쉽게 찾는법
         System.out.println("세션정보" + principalDetails.getUser());
 
+        /*
         // 힘들게 세션 정보 찾는법...
         Authentication auth = SecurityContextHolder.getContext().getAuthentication(); // Authentication
         PrincipalDetails mPrincipalDetails = (PrincipalDetails) auth.getPrincipal();
         System.out.println("직접 찾은 세션 정보 " + mPrincipalDetails.getUser());
+        */
 
+        // security taglibrary 로 대체.
 //        model.addAttribute("principal", principalDetails.getUser());
         return "user/update";
     }

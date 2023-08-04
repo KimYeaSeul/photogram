@@ -44,7 +44,7 @@ public class UserApiController {
             throw new CustomValidationApiException("유효성 검사 실패", errorMap);
         }else{
             User userEntity = userService.update(id, userUpdateDto.toEntity());
-            principalDetails.setUser(userEntity); // 세션 정보 변경
+            principalDetails.setUser(userEntity); // 변경된 정보 바로 반영 안됨. 세션 정보 변경
             return new CMRespDto<>(1, "회원 수정 완료", userEntity);
         }
     }

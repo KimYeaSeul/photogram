@@ -3,6 +3,7 @@ package com.cos.photogramstart;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+// TEST 
 //@Controller
 public class ViewControllerTest {
 
